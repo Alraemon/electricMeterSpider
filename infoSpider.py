@@ -6,9 +6,6 @@ Created on Mon Jul  2 18:57:26 2018
 @author: erwin
 """
 
-from htmldom import htmldom
-import urllib
-import http.client
 from selenium import webdriver
 from selenium.webdriver.support.ui import Select
 import time
@@ -63,6 +60,7 @@ for num1 in [2]:
                         name_4=name_3+option_4.text
                         print(option_4.text)
                         value_4=option_4.get_attribute("value")
+                        select_4.select_by_value(value_4)
                         option_data={"drlouming":value_1,"drceng":value_2,\
                                      "dr_ceng":value_3,"drfangjian":value_4,\
                                      "radio":"usedR"}
@@ -71,6 +69,7 @@ for num1 in [2]:
                     options_3=select_3.options
                 else:
                     value_4=options_4[0].get_attribute("value")
+                    select_4.select_by_value(value_4)
                     option_data={"drlouming":value_1,"drceng":value_2,\
                                  "dr_ceng":value_3,"drfangjian":value_4,\
                                  "radio":"usedR"}
@@ -103,4 +102,3 @@ pickle.dump(option_set,file)
 file.close()
 print("\033[1;35m //Data Saved to info.data// \033[0m")
 browser.quit()
-params=urllib.parse.urlencode()
