@@ -3,6 +3,9 @@
 """
 Created on Tue Jul  3 14:36:30 2018
 
+This script is for getting data on the given electric meters.
+The list of options should be provided by infoSpider.py
+
 @author: erwin
 """
 
@@ -85,4 +88,4 @@ finally:
     pickle.dump(data_matrix,meter_file)
     meter_file.close()
     print("\033[1;35m //Data File saved to meterData.data// \033[0m")
-    browser.close()
+    browser.quit()

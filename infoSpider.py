@@ -3,6 +3,9 @@
 """
 Created on Mon Jul  2 18:57:26 2018
 
+This script is for getting all the options info on the Default.aspx
+And save options info file with pickle.
+
 @author: erwin
 """
 
@@ -10,16 +13,7 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import Select
 import time
 import pickle
-'''
-dom=htmldom.HtmlDom("http://202.120.163.129:88/Default.aspx").createDom()
-elems=dom.find("select[name=drlouming] > option")
-drlouming=[]
-for elem in elems[1:]:
-    drlouming.append(elem.attr("value"))
-elems=dom.find("select[name=drceng] > option")
-drceng=[]
-#for elem in elems[1:]:
-'''
+
 browser=webdriver.PhantomJS()
 print("\033[1;35m //PhantomJS Browser Constructed// \033[0m")
 browser.get("http://202.120.163.129:88/Default.aspx")
